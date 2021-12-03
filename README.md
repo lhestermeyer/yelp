@@ -24,3 +24,9 @@ I was asked to
 * explain how to execute the code using docker.
 * create a presentation of the results for a technical audience
 
+## Business background
+<div class='alert alert-warning'>TODO: put this into the notebook.</div>
+
+Yelp is a social media and rating platform provider, that allows users to rate and search for businesses all around the world. That way users can find highly valued restaurants and the like more easily. Addtionally, users get personalized recommendations based on their searches.
+
+Yelp earns most of its revenue via ads. Businesses are able to purchase higher ranked ads to appear first for certain searches on yelp (similarly to Google ads). Yelp uses machine learning to predict the click-through-rate (CTR) and success rate of each ad in order to maximize the return on investment for businesses purchasing ads and thereby reducing cost per click and marketing costs in general.
