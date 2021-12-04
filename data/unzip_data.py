@@ -4,7 +4,7 @@ import tarfile, os
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 # work with fixed names to unzip only those we actually want to unzip.
-fnames = ['covid_19_dataset.tgz']
+fnames = ['covid_19_dataset.tar', 'yelp_dataset.tar', 'yelp_photos.tar']
 
 for fname in fnames:
   tar = tarfile.open(fname, "r:gz")
