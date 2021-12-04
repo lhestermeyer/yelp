@@ -57,3 +57,6 @@ TODO: Write longer, but I cannot be bothered.
 
 ### 5. Predict business category labels
 This was the original Yelp dataset challenge. I will not go into detail here, as there are many solutions available on the internet for this problem.
+
+### 6. Find out what makes good business bad and bad business good over time.
+Maybe there are events (i.e. pictures or changes to metadata), that explain why businesses drop in rating. As the dataset is not available in historized format, this use case idea will not work as well as it could, as we dont have changes to metadata available, but only a snapshot).
