@@ -8,5 +8,11 @@ fnames = ['covid_19_dataset.tgz']
 
 for fname in fnames:
   tar = tarfile.open(fname, "r:gz")
-  tar.extractall()
+  
+  # extract only the .json file if available. If none are there, then extractall
+  list_of_files = [l for l in tar.getmembers() if '.json' in l.name]
+
+  # extract files without the subfolder to avoid future errors with versioning of the data.
+  map(lambda zipped_file : tar._extract_member(zipped_file, zipped_file.name.rsplit('/', 1)[-1]), list_of_files)
+  
   tar.close()
