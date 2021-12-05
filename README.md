@@ -44,6 +44,50 @@ Due to time limitations we will only work on one of the tasks, but here are a fe
 ### 1. Elite user churn prediction
 Elite users are the ones that have a big influence on the overall reviews and their helpfulness. Thus, Yelp is interested in keeping these kind of members active. One idea would be to analyze what makes elite users churn the program and if we are able to predict churn. If so, Yelp might reactivate the users with an incentive (i.e. some elite event or similar).
 
+#### Data Product Canvas
+<table>
+    <tr>
+      <td>__BUSINESS CONTEXT__</td>
+      <td>__BUSINESS GOALS__</td>
+      <td>__DATA PRODUCT__</td>
+      <td>__PROCESSING__</td>
+      <td>__DATA__</td>
+    </tr>
+    <tr>
+      <td>
+        Yelp elite squad is a program for members that are especially active. They are motivated to stay active and elite members by granting virtual badges and 
+        being able to take part in special events with local businesses. However, the average elite member stays elite for `TODO` amount of days. Especially in areas where there are not many elite members it would be beneficial too keep these special members active to increase the value of the platform to businesses in these areas.
+      </td>
+      <td>
+        The goal would be to detect 80% of churns accurately whilst having a maximum of 5% false positives (falsely identified as churn members). The prediction needs to be done at least 6 month in advance (so on 30th of June) to have enough time to react to churners until the end of the year.
+      </td>
+      <td>
+        Binary classification into churn and no churn based on the history of reviews a user made in the previous year. 
+        We provide the classification results as a batch list to the user satisfaction team.
+      </td>
+      <td>
+        Processing happens once a year. Potentially more often, if we can predict further into the future.
+      </td>
+      <td>
+        User data, reviews (+ maybe pictures for V2.0)
+      </td>
+    </tr>
+    <tr>
+      <td>__USER GROUPS__</td>
+      <td>__USER PAINT POINTS__</td>
+      <td>__INTERFACE__</td>
+      <td>__ETHICS__</td>
+      <td>__LEGAL__</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+</table>
+
 ### 2. Business rating prediction based on photos and meta-data
 If new businesses open up, it would be very helpful to know what kind of interior and exterior design they would have to choose that helps increase their rating. If we are able to find drivers of rating in pictures and metadata, we might offer helpful insights to new businesses, how to optimize their rating by design choices.
 
