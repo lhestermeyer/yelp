@@ -18,6 +18,12 @@ table {
   width: 100%;
   table-layout: fixed;
 }
+
+table.ml-canvas td {
+    vertical-align: top;
+    border: 2px solid black;
+}
+
 </style>
 
 # Yelp Dataset Analysis
@@ -137,6 +143,53 @@ Elite users are the ones that have a big influence on the overall reviews and th
         We need to exclude users that have asked for deletion of data or did not accept the DSE. In that case, they are not part of this dataset, so we can continue on normally.
       </td>
     </tr>
+</table>
+
+#### __Machine Learning Canvas__
+<table class="ml-canvas">
+  <tr>
+    <td><b>PREDICTION TASK</b>
+      <br/>Binary Classification to predict if an existing elite customer churns (i.e. becomes inactive / non-elite) or stays elite member.
+      Is partially based on time-series data, which could either be flattened or fed into a respective time-series model (i.e. RNN) and flattened afterwards.
+    </td>
+    <td><b>DECISIONS</b>
+      <br/>All elite users will be filtered to those that are likely to churn.
+    </td>
+    <td rowspan="2"><b>VALUE PROPOSITION</b>
+      <br/>Those users that are likely to churn will be contacted by the user satisfication team with e-mail offers and the like. This requires an interface to the e-mail sending system to send the mails without user interference.
+    </td>
+    <td><b>DATA COLLECTION</b>
+      <br/>The ML model can be based on the existing review data and the data of the users. As we already collect this data, a constant retraining is possible.
+    </td>
+    <td><b>DATA SOURCES</b>
+      <br/>Reviews and User data tables.
+    </td>
+  </tr>
+  <tr>
+    <td rowspan="2"><b>IMPACT SIMULATION</b>
+      <br/>The costs of incorrect decisions are neglectable. However, it is more important to identify all churners than it is to avoid false positives.
+    </td>
+    <td><b>MAKING PREDICTIONS</b>
+      <br/>We make batch predictions and have virtually no time limit to do so. All necessary features can therefore be calculated on the fly from the base data tables.
+    </td>
+    <td><b>BUILDING MODELS</b>
+      <br/>One model is required. As we only know until next year if our predictions are correct, retraining once a year should be sufficient. There is virtually no time-limit for this task.
+    </td>
+    <td rowspan="2"><b>FEATURES</b>
+      <ul>
+        <li>history of user reviews</li>
+        <li>length of individual reviews</li>
+        <li>received feedback for reviews</li>  
+        <li>pictures uploaded by user</li>
+        <li>frequency of reviews per month</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3"><b>MONITORING</b>
+      <br/>We should measure the amount of churns we prevented by gathering direct user feedback on whether they thought about quitting in the past. 
+    </td>
+  </tr>
 </table>
 
 ### 2. Business rating prediction based on photos and meta-data
