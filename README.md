@@ -47,11 +47,11 @@ Elite users are the ones that have a big influence on the overall reviews and th
 #### Data Product Canvas
 <table>
     <tr>
-      <td>__BUSINESS CONTEXT__</td>
-      <td>__BUSINESS GOALS__</td>
-      <td>__DATA PRODUCT__</td>
-      <td>__PROCESSING__</td>
-      <td>__DATA__</td>
+      <td>**BUSINESS CONTEXT**</td>
+      <td>**BUSINESS GOALS**</td>
+      <td>**DATA PRODUCT**</td>
+      <td>**PROCESSING**</td>
+      <td>**DATA**</td>
     </tr>
     <tr>
       <td>
@@ -73,11 +73,11 @@ Elite users are the ones that have a big influence on the overall reviews and th
       </td>
     </tr>
     <tr>
-      <td>__USER GROUPS__</td>
-      <td>__USER PAINT POINTS__</td>
-      <td>__INTERFACE__</td>
-      <td>__ETHICS__</td>
-      <td>__LEGAL__</td>
+      <td>**USER GROUPS**</td>
+      <td>**USER PAINT POINTS**</td>
+      <td>**INTERFACE**</td>
+      <td>**ETHICS**</td>
+      <td>**LEGAL**</td>
     </tr>
     <tr>
       <td></td>
