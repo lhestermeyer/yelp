@@ -192,6 +192,8 @@ Elite users are the ones that have a big influence on the overall reviews and th
   </tr>
 </table>
 
+<div class="alert alert-warning">Unfortunately, the data seems to only have a subset of reviews per user. Thus, we cannot really build a realistic model for activeness during a year, if we dont have all reviews. Thus, we have to abandon this case.</div>
+
 ### 2. Business rating prediction based on photos and meta-data
 
 If new businesses open up, it would be very helpful to know what kind of interior and exterior design they would have to choose that helps increase their rating. If we are able to find drivers of rating in pictures and metadata, we might offer helpful insights to new businesses, how to optimize their rating by design choices.
@@ -213,3 +215,5 @@ This was the original Yelp dataset challenge. I will not go into detail here, as
 ### 6. Find out what makes good business bad and bad business good over time.
 
 Maybe there are events (i.e. pictures or changes to metadata), that explain why businesses drop in rating. As the dataset is not available in historized format, this use case idea will not work as well as it could, as we dont have changes to metadata available, but only a snapshot).
+
+___Update on this___: If we check the topic assignment over time, we might see changes in the assignment and can infer from that, if a company had changes in service or prices, or food quality, etc. that caused this drop. 
