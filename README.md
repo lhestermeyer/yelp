@@ -34,6 +34,10 @@ This repository contains my analysis of yelp data.
 
 You can reproduce the results of this repository in two different ways.
 
+1. Download the english word vectors from [here](https://fasttext.cc/docs/en/crawl-vectors.html)
+2. Download the yelp dataset
+3. Extract the .json files and the word vector file directly into the `/data` directory
+
 ### Using conda or pip
 
 In case you want to use conda or pip environments, we provided the necessary `environment.yml` and `requirements.txt` respectively.
