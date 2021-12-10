@@ -1,7 +1,8 @@
 jupyterlab
 matplotlib
+seaborn
 numpy
 pandas
-scikit-learn
-seaborn
-tensorflow
+gensim
+nltk
+tqdm
