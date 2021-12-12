@@ -1,5 +1,5 @@
 build: 
-	docker build -t docker_builds/notebook -f Dockerfile.notebook
+	docker build -t docker_builds/notebook -f Dockerfile.notebook .
 
 download:
 	@echo "Please download the data from Yelp dataset"
