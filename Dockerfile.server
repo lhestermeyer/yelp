@@ -1,5 +1,6 @@
 FROM tiangolo/uwsgi-nginx-flask:python3.8
-RUN apk --update add bash nano
+RUN apt-get update && apt-get -y update
+RUN apt-get install -y bash nano
 
 RUN pip3 install --upgrade pip
 
