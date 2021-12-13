@@ -24,8 +24,9 @@ nltk.download('punkt')
 app = Flask(__name__)
 
 lda_model = joblib.load('LDA_model_sentence_15.jbl')
-dictionary = joblib.load('dictionary_tfidf.jbl')
+dictionary = joblib.load('dictionary2.jbl')
 removed_words = joblib.load('removed_words2.jbl')
+removed_words = []
 tfidf = joblib.load('tfidf.jbl')
 
 @app.route('/', methods=['GET'])
