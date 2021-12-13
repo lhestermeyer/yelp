@@ -64,7 +64,7 @@ I ran this task on a laptop with 16 GB of RAM. I don't know, whether it would wo
 
 The model is not well-trained. It has difficulties detecting the right categories. By adding more irrelevant words to the stop-word list, this should improve. However, training and adapting the LDA is a pain, as you have to manually reassign topic names every time. 
 
-In future works, I would rather work with word-embeddings and clustering to generate topics. I have not done that in this occasion, because I wanted to spare some RAM.
+In future works, I would rather work with word-embeddings and clustering to generate topics. I have not done that in this occasion, because I wanted to spare some RAM and time was limited.
 
 ## Task description
 
