@@ -6,3 +6,4 @@ pandas
 gensim
 nltk
 tqdm
+joblib
