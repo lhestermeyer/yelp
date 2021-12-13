@@ -20,18 +20,18 @@ import joblib
 def vader(text):
     sid = SentimentIntensityAnalyzer()
 
-    words = set(nltk.corpus.words.words())
-    def remove_non_english(text):
-        return " ".join(w for w in nltk.wordpunct_tokenize(text) if w.lower() in words or w.isdigit())
+    # words = set(nltk.corpus.words.words())
+    # def remove_non_english(text):
+    #     return " ".join(w for w in nltk.wordpunct_tokenize(text) if w.lower() in words or w.isdigit())
     
-    text = remove_non_english(text)
+    # text = remove_non_english(text)
 
     if text == '':
         return ''
 
     def tokenize_and_score(text, sentence_wise=True):
         tokenized_sentences = tokenize.sent_tokenize(text)
-        
+        print(tokenized_sentences)
         if sentence_wise:
             scores = list(map(lambda x : sid.polarity_scores(x)['compound'], tokenized_sentences))
         else:
@@ -98,13 +98,26 @@ def lda(tokenized_text, lda_model, dictionary, removed_words):
     return sentence_lda_scores
 
 def score(vader_scores, sentence_lda_scores):
+    # topic_assignments = {
+    #     'food': [1,3,5,6,7,8,9],
+    #     'service': [2, 4]
+    # }
+    # topic_assignments = {
+    #     'food': [1,3,4,6],
+    #     'service': [0,2],
+    #     'price': [5]
+    # }
     topic_assignments = {
-        'food': [1,3,5,6,7,8,9],
-        'service': [2, 4]
+        'food': [1,3,5,6, 8, 11, 12, 13],
+        'service': [0,3,4,9,10],
+        'ambience': [7,14],
+        'price': [2]
     }
 
     topic_assignments_reversed = {index: key for key, value in topic_assignments.items() for index in value }
 
+    print(vader_scores)
+    print(sentence_lda_scores)
 
     def get_topic_scores(vader_scores, sentence_lda_scores):
         '''
@@ -121,7 +134,7 @@ def score(vader_scores, sentence_lda_scores):
         for topic_scores, vader_score in zip(sentence_lda_scores, vader_scores):
             topics, scores = zip(*topic_scores)
             
-            topic = topics[np.argmax(scores)]+1 # topics here are 0 based, whilst above they are 1 based
+            topic = topics[np.argmax(scores)]
                 
             # check in which subset the key is in.
             assigned_topic = topic_assignments_reversed[topic]

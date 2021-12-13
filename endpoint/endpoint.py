@@ -23,9 +23,9 @@ nltk.download('punkt')
 
 app = Flask(__name__)
 
-lda_model = joblib.load('LDA_model.jbl')
-dictionary = joblib.load('dictionary.jbl')
-removed_words = joblib.load('removed_words.jbl')
+lda_model = joblib.load('LDA_model_15.jbl')
+dictionary = joblib.load('dictionary2.jbl')
+removed_words = joblib.load('removed_words2.jbl')
 
 @app.route('/', methods=['GET'])
 @cross_origin()
