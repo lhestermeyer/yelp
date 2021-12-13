@@ -43,7 +43,7 @@ def vader(text):
 
     return tokenized_sentences, vader_scores
 
-def lda(tokenized_text, lda_model, dictionary, removed_words):
+def lda(tokenized_text, lda_model, dictionary, removed_words, tfidf):
     #POS tagging first to utilize sentences
     stemmer = SnowballStemmer('english')
 
@@ -92,8 +92,9 @@ def lda(tokenized_text, lda_model, dictionary, removed_words):
 
     for sentence in prepared_sentences:
         new_doc_bow = dictionary.doc2bow(sentence)
+        doc_tfidf = tfidf[new_doc_bow]
 
-        sentence_lda_scores.append(list(lda_model.get_document_topics(new_doc_bow)))
+        sentence_lda_scores.append(list(lda_model.get_document_topics(doc_tfidf)))
 
     return sentence_lda_scores
 
@@ -107,12 +108,20 @@ def score(vader_scores, sentence_lda_scores):
     #     'service': [0,2],
     #     'price': [5]
     # }
+    # topic_assignments = {
+    #     'food': [1,3,5,6, 8, 11, 12, 13],
+    #     'service': [0,3,4,9,10],
+    #     'ambience': [7,14],
+    #     'price': [2]
+    # }
     topic_assignments = {
-        'food': [1,3,5,6, 8, 11, 12, 13],
-        'service': [0,3,4,9,10],
-        'ambience': [7,14],
-        'price': [2]
-    }
+        'food': [0, 1, 11, 13],
+        'eating': [8],
+        'service': [6, 9, 12],
+        'ambience': [2, 4, 5],
+        'price': [3],
+        'irrelevant': [7,14,8,10]
+    } 
 
     topic_assignments_reversed = {index: key for key, value in topic_assignments.items() for index in value }
 

@@ -23,9 +23,10 @@ nltk.download('punkt')
 
 app = Flask(__name__)
 
-lda_model = joblib.load('LDA_model_15.jbl')
-dictionary = joblib.load('dictionary2.jbl')
+lda_model = joblib.load('LDA_model_sentence_15.jbl')
+dictionary = joblib.load('dictionary_tfidf.jbl')
 removed_words = joblib.load('removed_words2.jbl')
+tfidf = joblib.load('tfidf.jbl')
 
 @app.route('/', methods=['GET'])
 @cross_origin()
@@ -45,7 +46,7 @@ def predict():
 
     tokenized_sentences, vader_scores = vader(text)
 
-    sentence_lda_scores = lda(tokenized_sentences, lda_model, dictionary, removed_words)
+    sentence_lda_scores = lda(tokenized_sentences, lda_model, dictionary, removed_words, tfidf)
 
     return score(vader_scores, sentence_lda_scores)
     
