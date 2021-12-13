@@ -23,4 +23,4 @@ COPY . /app
 EXPOSE 8000
 # expose flask standard port
 
-CMD ["gunicorn", "-b", "0.0.0.0:8000", "--chdir", "/app/endpoint", "endpoint:app"]
+CMD ["gunicorn", "-b", "0.0.0.0:8000", "--chdir", "/app", "endpoint:app"]
