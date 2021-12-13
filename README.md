@@ -1,31 +1,3 @@
-<style>
-th{
-  background-color: rgb(200,200,200);
-  color: black;
-  font-weight: bold;
-  border: 1px solid white; 
-  border-collapse: collapse;
-}
-td {
-  background-color: rgb(220,220,220);
-  color: black;
-  font-weight: normal;
-  border: 1px solid white;
-  border-collapse: collapse;
-}
-
-table {
-  width: 100%;
-  table-layout: fixed;
-}
-
-table.ml-canvas td {
-    vertical-align: top;
-    border: 2px solid black;
-}
-
-</style>
-
 # Yelp Dataset Analysis
 
 This repository contains my analysis of yelp data.
