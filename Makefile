@@ -12,4 +12,6 @@ build-server:
 
 run-server:
 	docker run -p 8000:8000 docker_builds/server
-	
+
+presentation:
+	jupyter nbconvert notebooks/20_RestaurantRatingChanges.ipynb --to slides --no-prompt --TagRemovePreprocessor.remove_input_tags={\"remove-input\"} --post serve --SlidesExporter.reveal_theme=simple
