@@ -7,3 +7,4 @@ gensim==4.1.2
 nltk==3.6.5
 tqdm==4.62.3
 joblib==1.1.0
+rise==5.7.1
